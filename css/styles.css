@@ -47,8 +47,23 @@
   background-color: var(--color-light);
 }
 
-.button-full-width {
-  width: 100%;
+
+/*---- TYPOGRAPHY ----*/
+h1 {
+  font-size: 90pt;
+  font-weight: bolder;
+  color: var(--color-light);
+  text-transform: uppercase;
+}
+h2{
+  font-size: 30pt;
+  font-weight: 900;
+}
+h4{
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 60pt;
+  color:var(--color-light);
 }
 
 /*---- ALL LG IMAGES ----*/
@@ -57,12 +72,15 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 /*---- HERO SECTION ----*/
 #hero {
   display: grid;
   background-image: url('../img/connected-world.jpg');
   min-height: 100%;
+  opacity: 0.70;
   justify-content: center;
   justify-items: center;
 }
@@ -75,7 +93,6 @@
 
 /*----ABOUT SECTION ---*/
 #about-panel, #engagement-panel, #involved-panel {
-  display: grid;
   min-height: 400px;
 }
 /*----GOALS SECTION ---*/
@@ -88,10 +105,13 @@
 
 /*---- IMG BREAK SECTION ----*/
 #img-break { 
-  background-image: url('../img/');
-  min-height: 400px;
+  background-image: url('../img/ccis_19_0014.jpg');
+  min-height: 100%;
 }
-/*---- CARDS -----*/
+
+
+
+/*---- CARDS -----
 
 .card-container {
   width: 376px;
@@ -125,12 +145,9 @@
   top: 0;
   left: 0;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;*/
+  transition: all 0.5s ease;
 }
 
-/*.card:hover {
-  transform: rotateY(180deg);
-}*/
 .do-flip {
   -o-transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
@@ -180,7 +197,7 @@
   padding: 0;
   color: black;
 }
-
+*/
 /*--- FOOTER ---*/
 
 footer {
@@ -192,7 +209,6 @@ footer {
 }
 
 footer .footer-logo {
-  
   height: 152px;
   width: 176px;
 }

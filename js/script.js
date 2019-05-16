@@ -3,7 +3,7 @@
   Dept: Marketing and Communications
 */
 
-
+/*
 document.addEventListener('DOMContentLoaded', function(event) {
 
   document.getElementById('card-front-to-back-button').style.visibility = 'visible';
@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
   };
 
   document.getElementById('card-back-to-front-button').onclick = function() {
-  document.getElementById('flip-card').classList.toggle('do-flip');
+  document.getElementById('card').classList.toggle('do-flip');
   };
 
-});
+});*/
+
+
