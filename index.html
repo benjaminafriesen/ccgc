@@ -7,14 +7,14 @@
   <title>Center for Common Good Computing - Regis University - CCIS</title>
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
   <div class="container">
-    <section class="hero">
+    <section id="hero">
       <div class="main-logo"><img src="img/regis-horz-logo.png"></div>
       <div class="full-title">
         <h4>Center for</h4>
@@ -28,7 +28,7 @@
       </div>      
     </section><!--End hero-->
 
-    <section class="about-panel">
+    <section id="about-panel">
       <div id="about-intro">
         <header class="about-us">
           <h2 class="section-title">About Us</h2>
@@ -48,11 +48,11 @@
             The Center’s mission is to create responsive, dynamic, cutting edge solutions to improve the human condition for the betterment of society. The collaborative endeavor brings together industry, government and education institutions to facilitate the…
           </p>
         </div>
-        <img src="https://via.placeholder.com/576x400">
+        <img src="https://via.placeholder.com/576x400" class="side-img">
       </div>
     </section><!--End about-panel-->
-    <section class="goals-panel">
-      <div class="bg-panel">
+    <section id="goals-panel">
+      <div class="side-bg">
         <header class="goals">
           <h2 class="section-title">Goals of the Center</h2>
         </header>
@@ -68,32 +68,31 @@
       </div>
     </section><!--End goals-panel-->
     
-    <section class="engagement-panel">
+    <section id="engagement-panel">
 
     </section><!--End engagement-panel-->
     
-    <section class="img-break">
-      <img src="">
-    </section> <!--End img-break-->
+    <section id="img-break"></section>
     
-    <section class="involved-panel">
+    <section id="involved-panel">
       <header class="get-involved">
         <h2 class="section-title">Get Involved</h2>
       </header>
       <button class="button button-full-width">Give Now to the General Fund</button>
       <div class="cards-holder">
         <div class="card-container">
-          <div class="card">
+          <div class="card" id="card-1">
             <div class="card-front">
               <h3>CCIS Excellence Fund</h3>
-              <a href="#"><i>Information icon spins card</i></a>
-              <a href="#">Give Now <span><i></i></span></a>
+              <a href="#"><i class="fas fa-info-circle card-front-to-back-button"></i></a>
+              <a href="#">Give Now <i class="fas fa-arrow"></i></a>
             </div>
             <div class="card-back">
               <p>CCIS Excellence fund description fits in here on the backside
                 of the card to provide further information before they actually
                 jump to the Give Page. In case this isn't the fund they want to give to.
               </p>
+              <a href="#"><i class="fas fa-times"></i></a>
             </div>
           </div>
         </div>

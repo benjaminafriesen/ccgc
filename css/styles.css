@@ -4,18 +4,23 @@
 */
 
 /*---- Universal Styles -----*/
-* {
+*, body, html {
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  box-sizing: border-box;
 }
 
-html {
-  box-sizing: border-box;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 :root {
@@ -23,15 +28,14 @@ html {
   --color-light: white;
   --color-primary: #D2D2D2;
   --color-accent: #3E3E3E;
-
-  --ff-title: ;
-  --ff-sans: 'Open Sans', sans-serif;
 }
 
 .button {
   border: none;
   background-color: var(--color-primary);
   color: var(--color-dark);
+  width: 200px;
+  height: 46px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -39,64 +43,156 @@ html {
   font-size: 16px;
 }
 
+.button:hover {
+  background-color: var(--color-light);
+}
+
 .button-full-width {
   width: 100%;
 }
 
-/*---- HERO SECTION ----*/
-.hero {
-  display: grid;
-  height: 900px;
-  background: black;
+/*---- ALL LG IMAGES ----*/
+#hero, #goals-panel, #img-break {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.hero .main-logo img{
+/*---- HERO SECTION ----*/
+#hero {
+  display: grid;
+  background-image: url('../img/connected-world.jpg');
+  min-height: 100%;
+  justify-content: center;
+  justify-items: center;
+}
+
+#hero .main-logo {
   width: 254px;
   height: 27px;
+  margin-top: 5%;
 }
 
+/*----ABOUT SECTION ---*/
+#about-panel, #engagement-panel, #involved-panel {
+  display: grid;
+  min-height: 400px;
+}
+/*----GOALS SECTION ---*/
 
+#goals-panel {
+  display: grid;
+  background-image: url('../img/ccis_14_0017.jpg');
+  min-height: 400px;
+}
+
+/*---- IMG BREAK SECTION ----*/
+#img-break { 
+  background-image: url('../img/');
+  min-height: 400px;
+}
 /*---- CARDS -----*/
 
 .card-container {
-  position: relative;
   width: 376px;
   height: 376px;
+  position: relative;
+  -o-perspective: 900px;
+  -webkit-perspective: 900px;
+  -ms-perspective: 900px;
+  perspective: 900px;
   background: green;
 }
 
-.card {
-  position: absolute;
+.card-container .card {
   width: 100%;
   height: 100%;
+  text-align: center;
+  margin: 50px auto;
+  position: absolute;
+  -o-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -o-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
-  background: yellow;
+  radius: 25px;
+  /*position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;*/
 }
 
-.card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: gray;
-  color: black;
-}
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: #3E3E3E;
-  color: white;
+/*.card:hover {
   transform: rotateY(180deg);
+}*/
+.do-flip {
+  -o-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.card-container .card-front, 
+.card-container .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -o-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.card-container .card-front{
+  background: var(--color-light);
+  color: var(--color-primary);
+}
+.card-container .card-back {
+  background: lightblue;
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background: var(--color-primary);
+  color: var(--color-light);
+}
+
+.card-container .card .card-front-to-back-button, 
+.card-container .card .card-back-to-front-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-accent);
+  cursor: pointer;
+  visibility: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: .7em;
+  padding: 0;
+  color: black;
 }
 
 /*--- FOOTER ---*/
 
 footer {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 200px;
   background: var(--color-accent);
+}
+
+footer .footer-logo {
+  
+  height: 152px;
+  width: 176px;
 }
