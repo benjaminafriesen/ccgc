@@ -3,6 +3,7 @@
   Dept: Marketing and Communications
 */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 /*---- Universal Styles -----*/
 *, body, html {
   margin: 0;
@@ -13,10 +14,11 @@
   background: transparent;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   color: black;
   box-sizing: border-box;
+  line-height: 1.75em;
 }
 
 *, *::before, *::after {
@@ -30,24 +32,15 @@
   --color-accent: #3E3E3E;
 }
 
-.button {
+button {
   border: none;
-  background-color: var(--color-primary);
-  color: var(--color-dark);
   width: 200px;
   height: 46px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
   margin: 5px;
 }
-
-.button:hover {
-  background-color: var(--color-light);
-}
-
-
 /*---- TYPOGRAPHY ----*/
 h1 {
   font-size: 75pt;
@@ -59,6 +52,10 @@ h1 {
 h2{
   font-size: 30pt;
   font-weight: 900;
+}
+h3{
+  font-size: 24pt;
+  font-weight: 700;
 }
 h4{
   font-family: Georgia, serif;
@@ -84,7 +81,7 @@ h1, h4 {
 /*---- HERO SECTION ----*/
 #hero {
   background-image: url('../img/connected-world.jpg');
-  opacity: 0.70;
+  opacity: 0.90;
   display: grid;
   grid-template-areas: 'logo' 'title' 'button-group';
   justify-content: center;
@@ -122,20 +119,84 @@ h1, h4 {
   align-items: center;
 }
 
-/*----ABOUT SECTION ---*/
-#about-panel, #engagement-panel, #involved-panel {
-  min-height: 400px;
+#hero .btn-group .button {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
 }
 
-#about-panel .about-intro{
-  
+#hero .btn-group .button:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/*--- STYLES APPLYING TO MULTI SECTIONS ---*/
+#about-panel, 
+#engagement-panel, 
+#involved-panel {
+  min-height: 100%;
+}
+
+
+/*----ABOUT SECTION ---*/
+#about-panel {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+#about-panel #about-intro {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  background-color: var(--color-primary);
+  margin: 60px 10% 0;
+  height: 400px;
+}
+
+#about-panel #about-intro header {
+  text-align: center;
+  height: 60px;
+  margin: 60px 0 20px 0;
+}
+#about-panel #about-intro .body-text {
+  width: 80%;
+  max-height:250px;
+  margin: 0 auto;
+}
+
+#about-panel #about-intro .body-text #intro-text {
+  line-height: 1.75em;
+  text-align: center;
+  font-size: 18pt;
+  font-weight: 700;
+}
+#about-panel #mission-intro {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  height: 273px;
+  width: 476px;
+  align-self: center;
+  justify-self: center;
+}
+#about-panel #mission-intro .mission { 
+  height: 60px;
+  margin-bottom: 20px;
+}
+#about-panel #mission-intro .side-img {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 576px;
+  height: 400px;
 }
 /*----GOALS SECTION ---*/
-
 #goals-panel {
   display: grid;
   background-image: url('../img/ccis_14_0017.jpg');
   min-height: 400px;
+}
+
+
+/*---- ENGAGEMENT SECTION ---*/
+#engagement-panel {
+  background-color: var(--color-primary);
 }
 
 /*---- IMG BREAK SECTION ----*/
@@ -233,7 +294,7 @@ h1, h4 {
   color: black;
 }
 */
-/*--- FOOTER ---
+/*--- FOOTER ---*/
 
 footer {
   display: grid;
@@ -247,4 +308,3 @@ footer .footer-logo {
   height: 152px;
   width: 176px;
 }
-*/
