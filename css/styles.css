@@ -2,7 +2,7 @@
   Author: Benjamin Friesen
   Dept: Marketing and Communications
 */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 /*---- Universal Styles -----*/
 *, body, html {
   margin: 0;
@@ -36,11 +36,11 @@
   color: var(--color-dark);
   width: 200px;
   height: 46px;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 5px;
 }
 
 .button:hover {
@@ -50,10 +50,11 @@
 
 /*---- TYPOGRAPHY ----*/
 h1 {
-  font-size: 90pt;
-  font-weight: bolder;
+  font-size: 75pt;
   color: var(--color-light);
   text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05em;
 }
 h2{
   font-size: 30pt;
@@ -62,8 +63,12 @@ h2{
 h4{
   font-family: Georgia, serif;
   font-style: italic;
-  font-size: 60pt;
+  font-size: 45pt;
   color:var(--color-light);
+}
+
+h1, h4 {
+  text-align: center;
 }
 
 /*---- ALL LG IMAGES ----*/
@@ -73,27 +78,57 @@ h4{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100%;
 }
 
 /*---- HERO SECTION ----*/
 #hero {
-  display: grid;
   background-image: url('../img/connected-world.jpg');
-  min-height: 100%;
   opacity: 0.70;
+  display: grid;
+  grid-template-areas: 'logo' 'title' 'button-group';
   justify-content: center;
   justify-items: center;
 }
-
 #hero .main-logo {
+  grid-area: logo;
   width: 254px;
   height: 27px;
   margin-top: 5%;
+}
+#hero .full-title {
+  grid-area: title;
+  max-height: 275px;
+  max-width: 900px;
+}
+
+#hero .italic-title {
+  height: 73px;
+}
+
+#hero .bold-title {
+  height: 195px;
+  font-weight: 900;
+}
+
+#hero .center-horzrule {
+  border: 5px solid var(--color-light);
+  width: 20%;
+  margin: 50px auto 0;
+}
+#hero .btn-group {
+  display: flex;
+  grid-area: button-group;
+  align-items: center;
 }
 
 /*----ABOUT SECTION ---*/
 #about-panel, #engagement-panel, #involved-panel {
   min-height: 400px;
+}
+
+#about-panel .about-intro{
+  
 }
 /*----GOALS SECTION ---*/
 
@@ -198,7 +233,7 @@ h4{
   color: black;
 }
 */
-/*--- FOOTER ---*/
+/*--- FOOTER ---
 
 footer {
   display: grid;
@@ -212,3 +247,4 @@ footer .footer-logo {
   height: 152px;
   width: 176px;
 }
+*/
