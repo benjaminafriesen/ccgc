@@ -49,7 +49,7 @@
           </p>
         </div>
       </div>
-      <div class="side-img"><img src="https://via.placeholder.com/576x400"></div>
+      <img class="side-img" src="https://via.placeholder.com/576x400">
     </section><!--End about-panel-->
     
     <section id="goals-panel">
@@ -74,37 +74,44 @@
         <h2 class="section-title">Engagement</h2>
       </header>
       <div class="column-container">
-        <div class="img-container"><img src="https://via.placeholder.com/576x400"></div>
-        <h3>Rocky Mountain Collegiate Cyber Defense Competition</h3>
-        <p>
-          Affording college students the opportunity to test their cybersecurity skills, knowledge and abilities against industry experts; thus, providing these students with real-world experience in a control environment. This two-day event simulates business scenario cyberattack, and drew eight university teams.
-        </p>
-        <button class="dark-button">LEARN MORE</button>
-        
-        <h3>The National Center for Women and Information</h3>
-        <p>
-          Technology - Regis University's College of Computer and Information Sciences (CCIS) received a $10,000 gift from the National Center for Women and Information Technology to support the recruitment and retention of women in computer science and other related degrees via the Learning Circles Project.
-        </p>
-        <button class="dark-button">LEARN MORE</button>
+        <article class = "item item-1">
+          <img src="https://via.placeholder.com/576x400">
+          <h3>Rocky Mountain Collegiate Cyber Defense Competition</h3>
+          <p>
+            Affording college students the opportunity to test their cybersecurity skills, knowledge and abilities against industry experts; thus, providing these students with real-world experience in a control environment. This two-day event simulates business scenario cyberattack, and drew eight university teams.
+          </p>
+          <button class="dark-button">LEARN MORE</button>
+        </article>
+        <article class = "item item-2">
+          <h3>The National Center for Women and Information</h3>
+          <p>
+            Technology - Regis University's College of Computer and Information Sciences (CCIS) received a $10,000 gift from the National Center for Women and Information Technology to support the recruitment and retention of women in computer science and other related degrees via the Learning Circles Project.
+          </p>
+          <button class="dark-button">LEARN MORE</button>
+        </article>
+        <article class = "item item-3">
+          <h3>Enterprise Systems Engineering Summer Internship</h3>
+          <p>
+            Giving selected students from Denver Public Schools an opportunity to work with CCIS faculty for a six-week paid engagement.
+          </p>
+          <button class="dark-button">LEARN MORE</button>
+        </article>
 
-        <h3>Enterprise Systems Engineering Summer Internship</h3>
-        <p>
-          Giving selected students from Denver Public Schools an opportunity to work with CCIS faculty for a six-week paid engagement.
-        </p>
-        <button class="dark-button">LEARN MORE</button>
-
-        <div class="img-container"><img src="https://via.placeholder.com/576x400"></div>
-        <h3>Porter-Billups Leadership Academy</h3>
-        <p>
-          Introducing students from inner city schools to the field of cybersecurity to expand their awareness of STEM-related professions.
-        </p>
-        <button class="dark-button">LEARN MORE</button>
-
-        <h3>Colorado FIRST Tech Challenge</h3>
-        <p>
-          Donations to the Dean’s Excellence Fund help promote STEM programs through the Colorado FIRST Tech Challenge.
-        </p>
-        <button class="dark-button">LEARN MORE</button>
+        <article class = "item item-4">
+          <img src="https://via.placeholder.com/576x400">
+          <h3>Porter-Billups Leadership Academy</h3>
+          <p>
+            Introducing students from inner city schools to the field of cybersecurity to expand their awareness of STEM-related professions.
+          </p>
+          <button class="dark-button">LEARN MORE</button>
+        </article>
+        <article class = "item item-5">
+          <h3>Colorado FIRST Tech Challenge</h3>
+          <p>
+            Donations to the Dean’s Excellence Fund help promote STEM programs through the Colorado FIRST Tech Challenge.
+          </p>
+          <button class="dark-button">LEARN MORE</button>
+        </article>
       </div>
     </section><!--End engagement-panel-->
     
@@ -115,16 +122,32 @@
         <h2 class="section-title">Get Involved</h2>
       </header>
       <button class="button button-full-width">Give Now to the General Fund</button>
-      <div class="cards-holder">
-        <div class="card-container">
-          <div class="card" id="card-1">
-            <div class="card-front">
-              <h3>CCIS Excellence Fund</h3>
-              <a href="#"><i class="fas fa-info-circle card-front-to-back-button"></i></a>
+      
+      <div class="card-container">
+        <div class="card" id="card-1">
+          <div class="side card-front">
+            <h3>CCIS Excellence Fund</h3>
+            <a href="#" onclick="flipCard()"><i class="fas fa-info-circle card-front-to-back-button"></i></a>
+            <a href="#">Give Now <i class="fas fa-arrow"></i></a>
+          </div>
+          <div class="side card-back">
+            <p>CCIS Excellence fund description fits in here on the backside
+              of the card to provide further information before they actually
+              jump to the Give Page. In case this isn't the fund they want to give to.
+            </p>
+            <a href="#"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+          <div class="card" id="card-2">
+            <div class="side card-front">
+              <h3>CCIS Scholarship Fund</h3>
+              <a href="#" onclick="flipCard()"><i class="fas fa-info-circle card-front-to-back-button"></i></a>
               <a href="#">Give Now <i class="fas fa-arrow"></i></a>
             </div>
-            <div class="card-back">
-              <p>CCIS Excellence fund description fits in here on the backside
+            <div class="side card-back">
+              <p>CCIS Scholarship Fund description fits in here on the backside
                 of the card to provide further information before they actually
                 jump to the Give Page. In case this isn't the fund they want to give to.
               </p>
@@ -132,7 +155,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
       <div class="left">
         <p>Want to learn how your donations will be used to support our tech community?</p>
         <p><a href="mailto:jzuiker@regis.edu">Contact Justin Zuiker</a>, Director, Major Gifts, for details.</p>

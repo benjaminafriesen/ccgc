@@ -41,6 +41,8 @@ button {
   text-transform: uppercase;
   margin: 5px;
 }
+
+
 /*---- TYPOGRAPHY ----*/
 h1 {
   font-size: 75pt;
@@ -54,8 +56,9 @@ h2{
   font-weight: 900;
 }
 h3{
-  font-size: 24pt;
+  font-size: 18pt;
   font-weight: 700;
+  max-height: 100px;
 }
 h4{
   font-family: Georgia, serif;
@@ -130,12 +133,6 @@ h1, h4 {
 }
 
 /*--- STYLES APPLYING TO MULTI SECTIONS ---*/
-#about-panel, 
-#engagement-panel, 
-#involved-panel {
-  min-height: 1022px;
-}
-
 header {
   height:60px;
 }
@@ -146,6 +143,7 @@ header {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  height: 1024px;
 }
 #about-panel #about-intro {
   grid-column: 1 / 3;
@@ -182,19 +180,18 @@ header {
 #about-panel #mission-intro .mission { 
   margin-bottom: 20px;
 }
-#about-panel #mission-intro .side-img {
+#about-panel .side-img {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 576px;
   height: 400px;
-  padding: 50px;
 }
 /*----GOALS SECTION ---*/
 #goals-panel {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-image: url('../img/ccis_14_0017.jpg');
-  min-height: 400px;
+  height: 1024px;
 }
 
 #goals-panel .side-bg {
@@ -206,6 +203,7 @@ header {
   opacity: 0.85;
   padding: 50px;
   margin: 50px;
+  transform: translate3d(0, 0, 0);
 }
 
 #goals-panel .side-bg header {
@@ -216,26 +214,37 @@ header {
 }
 
 #goals-panel .side-bg .body-text ul {
-  height: 4.5rem;
+  position: relative;
+  display: block;
+  list-style-type: disc;
+  height: 20%;
 }
 
 /*---- ENGAGEMENT SECTION ---*/
 #engagement-panel {
   background-color: var(--color-primary);
+  height: 1570px;
+  padding: 5%;
 }
 
 #engagement-panel .column-container {
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
+  min-height: 1120px;
   column-count: 2;
-  column-width: 476px;
-  height: 1120px;
+  column
 }
 
-#engagement-panel .column-container .img-container{
-  overflow: hidden;
+#engagement-panel .column-container .item img{
   width: 576px;
   height: 400px;
+}
+
+#engagement-panel .column-container .item p {
+  max-height: 190px;
+}
+
+#engagement-panel .column-container .item button .dark-button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
 /*---- IMG BREAK SECTION ----*/
@@ -245,94 +254,92 @@ header {
 }
 
 
+/*---- GET INVOLVED SECTION ----*/
+#involved-panel {
+  display: grid;
+  grid-template-areas:  'header header header'
+                        'button button button'
+                        'card-1 card-2 card-3'
+                        'card-4 card-5 card-6'
+                        'text-1 text-2 text-2';
+}
+#involved-panel .get-involved {
+  grid-area: header;
+}
 
-/*---- CARDS -----
+#involved-panel .button-full-width {
+  grid-area: button;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  width: 90%;
+  justify-self: center;
+}
+
+#card-1 {
+  grid-area: card-1;
+}
+#card-2 {
+  grid-area: card-2;
+}
+
+#involved-panel .left {
+  grid-area: text-1;
+}
+
+#involved-panel .right {
+  grid-area: text-2;
+}
+
+/*---- CARDS -----*/
 
 .card-container {
-  width: 376px;
-  height: 376px;
-  position: relative;
-  -o-perspective: 900px;
-  -webkit-perspective: 900px;
-  -ms-perspective: 900px;
-  perspective: 900px;
-  background: green;
+  
+  perspective: 800px;
 }
 
 .card-container .card {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin: 50px auto;
+  height: 376px;
+  width: 376px;
+  -webkit-transform: translate3d(0, 0, 0);
+  margin: 25px 50px;
   position: absolute;
-  -o-transition: all 1s ease-in-out;
-  -webkit-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -o-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
+  transition: transform 1s;
   transform-style: preserve-3d;
+  /* background-color:lightgray; */
   radius: 25px;
   /*position: relative;
-  width: 100%;
+  /*width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease;*/
 }
 
-.do-flip {
-  -o-transform: rotateY(-180deg);
-  -webkit-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-.card-container .card-front, 
-.card-container .card-back {
-  width: 100%;
+.side {
   height: 100%;
+  width: 100%;
   position: absolute;
-  -o-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
+  text-align: center;
   backface-visibility: hidden;
-  z-index: 2;
+  display: block;
 }
-
+.card-container .card-back {
+  transform: rotateY( 180deg );
+		/*z-index: 100;*/
+}
 .card-container .card-front{
   background: var(--color-light);
   color: var(--color-primary);
 }
 .card-container .card-back {
-  background: lightblue;
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
   background: var(--color-primary);
   color: var(--color-light);
 }
-
-.card-container .card .card-front-to-back-button, 
-.card-container .card .card-back-to-front-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 40px;
-  height: 40px;
-  background: var(--color-accent);
-  cursor: pointer;
-  visibility: hidden;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: .7em;
-  padding: 0;
-  color: black;
+#card.flipped {
+  transform: rotateY(180deg);
 }
-*/
 /*--- FOOTER ---*/
 
 footer {

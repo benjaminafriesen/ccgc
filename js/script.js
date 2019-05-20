@@ -20,3 +20,34 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });*/
 
 
+
+function scrollToAbout() {
+  document.querySelector('#about-panel').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+};
+
+function scrollToEngagement() {
+  document.querySelector('#engagement-panel').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+}
+function scrollToInvolved() {
+  document.querySelector('#involved-panel').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+}
+
+
+var flipped = false;
+
+function flipCard(){
+  if (flipped) {
+    document.querySelector(".card").className = "";
+  }
+  else{
+    document.querySelector(".card").className = "flipped";
+  }
+  flipped = !flipped;
+}
+
